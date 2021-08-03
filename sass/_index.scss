@@ -1,0 +1,252 @@
+// ========== NAV ==========
+
+.nav {
+  max-width: 1352px;
+  margin: 0 auto;
+  padding: 0 2em;
+  position: absolute;
+  inset: 34px 0 auto 0;
+  color: $clr-white;
+
+  &__logo {
+    padding: 1em 0;
+  }
+
+  &__list {
+    justify-content: flex-end;
+    align-items: center;
+    color: $clr-white;
+  }
+
+  &__item + li {
+    margin: 0 0 0 2.5em;
+  }
+
+  &__toggle {
+    padding: 0.2rem 0;
+    margin: 1rem 0;
+    display: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: $mobile) {
+    &__list {
+      flex-direction: column;
+      background-color: $clr-white;
+      color: $clr-blue;
+      width: 90vw;
+    }
+
+    &__item + li {
+      margin: 1rem auto 0;
+    }
+
+    &__toggle {
+      display: inline-block;
+    }
+  }
+}
+
+// ========== HERO ==========
+.hero {
+  background-image: url(../images/desktop/image-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  width: 100%;
+  text-align: center;
+  // justify-content: center;
+
+  &__heading {
+    margin: 4em auto 2em;
+  }
+
+  &__arrow {
+    width: 30px;
+    margin: 0 auto;
+  }
+}
+// ========== CONTENT ==========
+
+.content {
+  &__text-box,
+  &__img-box {
+    flex: 1;
+  }
+
+  &__text-box {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text-box--left,
+  &__text-box--right {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 600px;
+    align-items: flex-end;
+  }
+
+  &__text-box--left {
+    background-image: url(../images/desktop/image-graphic-design.jpg);
+    color: $clr-graphic-text;
+  }
+
+  &__text-box--right {
+    background-image: url(../images/desktop/image-photography.jpg);
+    color: $clr-photo-text;
+  }
+
+  &__text-wrapper {
+    max-width: 43ch;
+  }
+
+  &__text-wrapper--last {
+    text-align: center;
+    align-items: center;
+    max-width: 33ch;
+  }
+
+  &__heading--left {
+    color: $clr-graphic-text;
+  }
+
+  &__heading--right {
+    color: $clr-photo-text;
+  }
+
+  &__text {
+    padding: 2rem 0;
+
+    @media (max-width: $tablet) {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__text.text--sm {
+    padding: 2rem 0 3rem 0;
+  }
+
+  @media (max-width: $mobile) {
+    &__yellow {
+      flex-direction: column-reverse;
+    }
+
+    &__red,
+    &__last {
+      flex-direction: column;
+    }
+
+    &__text-box {
+      padding: 2rem 1rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    &__btn {
+      margin: 0 auto;
+    }
+
+    &__text-box--left,
+    &__text-box--right {
+      align-items: flex-end;
+    }
+  }
+}
+// ========== TESTIMONIALS ==========
+
+.testimonials {
+  text-align: center;
+  padding: 7rem 0;
+
+  &__box {
+    justify-content: center;
+  }
+
+  &__card {
+    max-width: 34ch;
+    padding: 1rem;
+  }
+
+  &__img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  &__text {
+    margin: 2.5em auto;
+  }
+
+  &__name {
+    margin: 0 auto 0.3em;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 3rem 0;
+
+    &__box {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__card {
+      margin: 1rem auto;
+    }
+
+    &__text {
+      margin: 1em auto;
+    }
+  }
+}
+// ========== GALLERY ==========
+
+.gallery {
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+
+    &__img-box {
+      max-width: 50%;
+    }
+  }
+}
+// ========== FOOTER ==========
+.footer {
+  background-color: hsla(168, 44%, 70%, 1);
+  margin: 0 auto;
+  padding: 3em 2em 0 2em;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    color: $clr-graphic-text;
+    justify-content: center;
+    padding: 2em 0 3em 0;
+  }
+
+  &__item {
+    margin: 0 1em;
+  }
+
+  &__item:hover {
+    color: $clr-white;
+  }
+
+  &__social {
+    color: $clr-cyan-text;
+    font-size: 25px;
+    justify-content: center;
+    padding: 0 0 1.5em;
+  }
+
+  &__icon {
+    margin: 0 0.3em;
+  }
+
+  &__icon:hover {
+    color: $clr-white;
+  }
+}
