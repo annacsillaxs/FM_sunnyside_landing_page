@@ -29,20 +29,52 @@
     cursor: pointer;
   }
 
+  &__modal {
+    display: none;
+  }
+
   @media (max-width: $mobile) {
     &__list {
-      flex-direction: column;
-      background-color: $clr-white;
-      color: $clr-blue;
-      width: 90vw;
-    }
-
-    &__item + li {
-      margin: 1rem auto 0;
+      display: none;
     }
 
     &__toggle {
       display: inline-block;
+      margin: 1rem 0 1rem auto;
+    }
+
+    &__modal {
+      position: absolute;
+      inset: 3rem 2rem auto 2rem;
+      width: auto;
+      opacity: 0;
+      display: flex;
+      background-color: $clr-white;
+      color: $clr-graphic-text;
+      border-top: 25px solid #3ebfff;
+      border-right: 25px solid $clr-white;
+      padding: 2rem 0;
+      transition: opacity 0.2s linear;
+    }
+
+    &__modal.open {
+      opacity: 1;
+    }
+
+    &__list--modal {
+      align-items: center;
+    }
+
+    &__item--modal {
+      margin: 0 auto 1rem;
+    }
+
+    &__item--modal.contact {
+      background-color: $clr-yellow;
+    }
+
+    &__item--modal.contact:hover {
+      background-color: $clr-blue;
     }
   }
 }

@@ -143,21 +143,32 @@ button {
   font-size: 15px;
   line-height: 25px;
   letter-spacing: 1px;
-  color: #23303e; }
+  color: #23303e;
+  position: relative;
+  cursor: pointer; }
 
-.btn--yellow {
-  border-bottom: 10px solid rgba(250, 212, 0, 0.25); }
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0.9rem 5% 0 -5%;
+  width: 110%;
+  height: 10px;
+  border-radius: 25px;
+  z-index: -1; }
 
-.btn--yellow:hover,
-.btn--yellow:active {
-  border-bottom-color: #fad400; }
+.btn--yellow::after {
+  background-color: rgba(250, 212, 0, 0.25); }
 
-.btn--red {
-  border-bottom: 10px solid rgba(254, 119, 102, 0.25); }
+.btn--yellow:hover.btn--yellow::after,
+.btn--yellow:active.btn--yellow::after {
+  background-color: #fad400; }
 
-.btn--red:hover,
-.btn--red:active {
-  border-bottom-color: #fe7867; }
+.btn--red::after {
+  background-color: rgba(254, 119, 102, 0.25); }
+
+.btn--red:hover.btn--red::after,
+.btn--red:active.btn--red::after {
+  background-color: #fe7867; }
 
 .ml {
   margin: 0 5% 0 20%; }
@@ -191,16 +202,36 @@ button {
     margin: 1rem 0;
     display: none;
     cursor: pointer; }
+  .nav__modal {
+    display: none; }
   @media (max-width: 700px) {
     .nav__list {
-      flex-direction: column;
-      background-color: white;
-      color: #23303e;
-      width: 90vw; }
-    .nav__item + li {
-      margin: 1rem auto 0; }
+      display: none; }
     .nav__toggle {
-      display: inline-block; } }
+      display: inline-block;
+      margin: 1rem 0 1rem auto; }
+    .nav__modal {
+      position: absolute;
+      inset: 3rem 2rem auto 2rem;
+      width: auto;
+      opacity: 0;
+      display: flex;
+      background-color: white;
+      color: #458c7e;
+      border-top: 25px solid #3ebfff;
+      border-right: 25px solid white;
+      padding: 2rem 0;
+      transition: opacity 0.2s linear; }
+    .nav__modal.open {
+      opacity: 1; }
+    .nav__list--modal {
+      align-items: center; }
+    .nav__item--modal {
+      margin: 0 auto 1rem; }
+    .nav__item--modal.contact {
+      background-color: #fad400; }
+    .nav__item--modal.contact:hover {
+      background-color: #23303e; } }
 
 .hero {
   background-image: url(../images/desktop/image-header.jpg);

@@ -197,24 +197,36 @@ button {
   line-height: 25px;
   letter-spacing: 1px;
   color: $clr-blue;
+  position: relative;
+  cursor: pointer;
 }
 
-.btn--yellow {
-  border-bottom: 10px solid rgba(250, 212, 0, 0.25);
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0.9rem 5% 0 -5%;
+  width: 110%;
+  height: 10px;
+  border-radius: 25px;
+  z-index: -1;
 }
 
-.btn--yellow:hover,
-.btn--yellow:active {
-  border-bottom-color: $clr-yellow;
+.btn--yellow::after {
+  background-color: rgba(250, 212, 0, 0.25);
 }
 
-.btn--red {
-  border-bottom: 10px solid rgba(254, 119, 102, 0.25);
+.btn--yellow:hover.btn--yellow::after,
+.btn--yellow:active.btn--yellow::after {
+  background-color: $clr-yellow;
 }
 
-.btn--red:hover,
-.btn--red:active {
-  border-bottom-color: $clr-red;
+.btn--red::after {
+  background-color: rgba(254, 119, 102, 0.25);
+}
+
+.btn--red:hover.btn--red::after,
+.btn--red:active.btn--red::after {
+  background-color: $clr-red;
 }
 
 .ml {
